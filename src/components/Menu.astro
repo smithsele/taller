@@ -1,0 +1,22 @@
+---
+type Props = {
+    nav: {
+        url: string;
+        name: string;
+    }[]
+}
+
+const {nav} = Astro.props
+---
+<div class="menu">
+{
+    nav.map((item)=> <a href={item.url}>{item.name}</a>)
+}
+</div>
+<style>
+.menu{
+    display:flex;
+    justify-content: center;
+    gap: 16px;
+}
+</style>
